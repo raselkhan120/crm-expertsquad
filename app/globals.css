@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 158 64% 20%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 158 64% 20%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 158 64% 20%;
+    --radius: 0.75rem;
+    --chart-1: 158 64% 52%;
+    --chart-2: 43 96% 56%;
+    --chart-3: 248 95% 70%;
+    --chart-4: 200 98% 39%;
+    --chart-5: 340 75% 55%;
+
+    /* Custom CRM Colors */
+    --sidebar-bg: 158 64% 20%;
+    --sidebar-text: 0 0% 100%;
+    --sidebar-hover: 158 64% 25%;
+    --success: 142 76% 36%;
+    --warning: 43 96% 56%;
+    --info: 200 98% 39%;
+    --orange: 25 95% 53%;
+    --purple: 248 95% 70%;
+    --blue: 200 98% 39%;
+    --teal: 158 64% 52%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 158 64% 52%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 158 64% 52%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 158 64% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom CRM Styles */
+.sidebar-bg {
+  background-color: hsl(var(--sidebar-bg));
+}
+
+.sidebar-text {
+  color: hsl(var(--sidebar-text));
+}
+
+.sidebar-hover:hover {
+  background-color: hsl(var(--sidebar-hover));
+}
+
+.metric-card-orange {
+  background: linear-gradient(135deg, hsl(var(--orange)) 0%, hsl(var(--orange)) 100%);
+}
+
+.metric-card-purple {
+  background: linear-gradient(135deg, hsl(var(--purple)) 0%, hsl(var(--purple)) 100%);
+}
+
+.metric-card-blue {
+  background: linear-gradient(135deg, hsl(var(--blue)) 0%, hsl(var(--blue)) 100%);
+}
+
+.metric-card-teal {
+  background: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(var(--teal)) 100%);
+}
+
+.status-badge-success {
+  background-color: hsl(var(--success) / 0.1);
+  color: hsl(var(--success));
+}
+
+.status-badge-warning {
+  background-color: hsl(var(--warning) / 0.1);
+  color: hsl(var(--warning));
+}
+
+.status-badge-info {
+  background-color: hsl(var(--info) / 0.1);
+  color: hsl(var(--info));
+}
+
+/* Mobile safe area for bottom navigation */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Fixed bottom navigation */
+@media (max-width: 1024px) {
+  .mobile-nav-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+  }
+}
